@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useRef, useState } from "react"
-import { AnswerContext } from "./components/answers/AnswerProvider";
-import { CharacterContext } from "./components/characters/CharacterProvider";
-import { QuestionContext } from "./components/questions/QuestionProvider"
+import { AnswerContext } from "./answers/AnswerProvider";
+import { CharacterContext } from "./characters/CharacterProvider";
+import { QuestionContext } from "./questions/QuestionProvider"
 
-export const Simulacrum = () => {
+export const Simulacrum = props => {
 
 	const { addQuestion } = useContext(QuestionContext);
 	const { answers, getAnswers } = useContext(AnswerContext);
@@ -37,6 +37,7 @@ export const Simulacrum = () => {
 			characterId: askee.current.value,
 			time: Date.now()
 		})
+		props.history.push("/ask")
 	}
 
 	return (
@@ -54,7 +55,7 @@ export const Simulacrum = () => {
 				<label htmlFor="wisom">To whom will you direct your question: </label>
 				<select name="wisdom" ref={askee}>
 					{characters.map(c => {
-						if (c.primary) return <option value={c.id}>{c.name}</option>
+						if (c.primary) return <option key={c.id} value={c.id}>{c.name}</option>
 					})}
 				</select>
 			</div>
@@ -66,7 +67,7 @@ export const Simulacrum = () => {
         	</button>
 			<div className="home__recentQuestions">
 				{initialAnswers.map(ans => {
-					return <div className="home_initialAnswers">{ans.response}</div>
+					return <div key={ans.id} className="home_initialAnswers">{ans.response}</div>
 				})
 				}
 			</div>

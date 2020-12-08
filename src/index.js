@@ -1,20 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AnswerProvider } from './components/answers/AnswerProvider';
-import { CharacterProvider } from './components/characters/CharacterProvider';
-import { QuestionProvider } from './components/questions/QuestionProvider';
+import { BrowserRouter as Router } from "react-router-dom"
 import './index.css';
-import { Simulacrum } from "./Simulacrum"
+import { ApplicationViews } from './components/ApplicationViews';
 
 ReactDOM.render(
   <React.StrictMode>
-    <CharacterProvider>
-      <AnswerProvider>
-        <QuestionProvider>
-          <Simulacrum />
-        </QuestionProvider>
-      </AnswerProvider>
-    </CharacterProvider>
+    <Router>
+      <ApplicationViews />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
