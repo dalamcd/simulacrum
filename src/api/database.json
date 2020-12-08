@@ -1,7 +1,76 @@
 {
-	"answers": [],
-	"questions": [],
-	"characters": [],
-	"avatars": [],
-	"users": []
+  "answers": [
+    {
+      "questionId": 1,
+      "response": "GOOD JOB"
+    },
+    {
+      "questionId": 2,
+      "response": "BETTER JOB"
+    },
+    {
+      "questionId": 3,
+      "response": "BEST JOB"
+    },
+    {
+      "questionId": 4,
+      "response": "BESTEST JOB"
+    }
+  ],
+  "questions": [
+    {
+      "visitorName": "sdfsdf",
+      "message": "Ask a questionsdfsdf",
+      "characterId": "1",
+      "time": 1607459975029,
+      "id": 1
+    },
+    {
+      "visitorName": "sdfsdf",
+      "message": "Ask a questionsdfsdf",
+      "characterId": "1",
+      "time": 1607459976917,
+      "id": 2
+    },
+    {
+      "visitorName": "sdfsdf",
+      "message": "Ask a questionsdfsdf",
+      "characterId": "1",
+      "time": 1607459977653,
+      "id": 3
+    },
+    {
+      "visitorName": "sdfsdf",
+      "message": "Ask a questionsdfsdf",
+      "characterId": "1",
+      "time": 1607459978189,
+      "id": 4
+    },
+    {
+      "visitorName": "sssssss",
+      "message": "Ask a questionsdfsdf",
+      "characterId": "1",
+      "time": 1607459982203,
+      "id": 5
+    }
+  ],
+  "characters": [
+    {
+      "name": "test",
+      "id": 1,
+      "primary": true
+    },
+    {
+      "name": "test2",
+      "id": 2,
+      "primary": true
+    },
+    {
+      "name": "test3",
+      "id": 3,
+      "primary": false
+    }
+  ],
+  "avatars": [],
+  "users": []
 }

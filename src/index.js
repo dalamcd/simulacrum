@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from "react-router-dom"
 import './index.css';
-import Simulacrum from "./Simulacrum"
+import { ApplicationViews } from './components/ApplicationViews';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Simulacrum />
+    <Router>
+      <ApplicationViews />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
