@@ -1,7 +1,39 @@
 {
-	"answers": [],
-	"questions": [],
-	"characters": [],
-	"avatars": [],
-	"users": []
+  "answers": [
+    {
+      "questionId": 1,
+      "response": "GOOD JOB"
+    },
+    {
+      "questionId": 2,
+      "response": "BETTER JOB"
+    },
+    {
+      "questionId": 3,
+      "response": "BEST JOB"
+    },
+    {
+      "questionId": 4,
+      "response": "BESTEST JOB"
+    }
+  ],
+  "questions": [
+    {
+      "visitorName": "a",
+      "message": "a",
+      "characterId": "1",
+      "time": 1607444616607,
+      "id": 1
+    },
+    {
+      "visitorName": "sdf",
+      "message": "Ask a questionsd",
+      "characterId": "2",
+      "time": 1607446174352,
+      "id": 2
+    }
+  ],
+  "characters": [],
+  "avatars": [],
+  "users": []
 }

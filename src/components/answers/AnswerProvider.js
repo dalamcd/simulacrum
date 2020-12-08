@@ -7,7 +7,7 @@ export const AnswerProvider = props => {
 	const [answers, setAnswers] = useState([])
 
 	const getAnswers = () => {
-		return fetch("http://localhost:8088/answerss")
+		return fetch("http://localhost:8088/answers")
 		.then(res => res.json())
 		.then(setAnswers)
 	}
