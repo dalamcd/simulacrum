@@ -33,7 +33,23 @@
       "id": 2
     }
   ],
-  "characters": [],
+  "characters": [
+	  {
+		  "name": "test",
+		  "id": 1,
+		  "primary": true
+	  },
+	  {
+		  "name": "test2",
+		  "id": 2,
+		  "primary": true
+	  },
+	  {
+		  "name": "test3",
+		  "id": 3,
+		  "primary": false
+	  }
+  ],
   "avatars": [],
   "users": []
 }
