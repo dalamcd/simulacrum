@@ -12,8 +12,19 @@ export const CharacterProvider = props => {
 		.then(setCharacters)
 	}
 
+	const addCharacter = char => {
+		return fetch("http://localhost:8088/characters", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify(char)
+		})
+		.then(getCharacters);
+	}
+
 	return <CharacterContext.Provider value ={{
-		characters, getCharacters
+		characters, getCharacters, addCharacter
 	}}>
 		{props.children}
 	</CharacterContext.Provider>

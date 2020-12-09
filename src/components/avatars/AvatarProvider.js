@@ -12,8 +12,23 @@ export const AvatarProvider = props => {
 		.then(setAvatars)
 	}
 
+	const addAvatar = av => {
+		return fetch("http://localhost:8088/avatars", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify(av)
+		})
+		.then(getAvatars);
+	}
+
+	const addAvatarImage = file => {
+		
+	}
+
 	return <AvatarContext.Provider value={{
-		avatars, getAvatars
+		avatars, getAvatars, addAvatar
 	}}>
 		{props.children}
 	</AvatarContext.Provider>
