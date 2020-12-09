@@ -1,19 +1,27 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState, setState } from "react"
 import { QuestionContext } from "./QuestionProvider"
 
 export const QuestionList = props => {
 
 	const {questions, getQuestions} = useContext(QuestionContext);
+	
+	const [questionList, setQuestionList] = useState([])
+
+	useEffect(() => {
+		setQuestionList(questions)
+	}, [questions])
 
 	useEffect(() => {
 		getQuestions();
 	}, [])
 
+
 	return (
 		<>
 		<section className="questionList">
-			{questions.map(q => {
-				<div class="question">q.message</div>
+			Questions: 
+			{questionList.map(q => {
+				return <div className="question" key={q.id}>{q.message}</div>
 			})}
 		</section>
 		</>

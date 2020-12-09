@@ -5,6 +5,7 @@ import { AnswerProvider } from './answers/AnswerProvider';
 import { CharacterProvider } from './characters/CharacterProvider';
 import { QuestionProvider } from './questions/QuestionProvider';
 import { Simulacrum } from "./Simulacrum"
+import { QuestionList } from "./questions/QuestionList";
 
 export const ApplicationViews = props => {
 
@@ -22,7 +23,9 @@ export const ApplicationViews = props => {
 				</AnswerProvider>
 			</CharacterProvider>
 			<QuestionProvider>
-				<Route exact path="/questions" />
+				<Route exact path="/questions" render={
+					props => <QuestionList {...props} />
+				} />
 			</QuestionProvider>
 		</>
 	)
