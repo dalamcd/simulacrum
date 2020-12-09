@@ -12,8 +12,10 @@ export const AnswerProvider = props => {
 		.then(setAnswers)
 	}
 
+	const getAnswersForQuestionById = id => answers.filter(a => a.questionId === parseInt(id))
+
 	return <AnswerContext.Provider value={{
-		answers, getAnswers
+		answers, getAnswers, getAnswersForQuestionById
 	}}>
 		{props.children}
 	</AnswerContext.Provider>

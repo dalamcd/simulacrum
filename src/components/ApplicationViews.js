@@ -8,6 +8,7 @@ import { AvatarProvider } from "./avatars/AvatarProvider";
 import { CharacterForm } from "./characters/CharacterForm";
 import { Simulacrum } from "./Simulacrum";
 import { QuestionList } from "./questions/QuestionList";
+import { Question } from "./questions/Question";
 
 export const ApplicationViews = props => {
 
@@ -21,6 +22,17 @@ export const ApplicationViews = props => {
 						<Route exact path="/ask" render={
 							props => <QuestionForm {...props} />
 						} />
+					</QuestionProvider>
+				</AnswerProvider>
+			</CharacterProvider>
+			<CharacterProvider>
+				<AnswerProvider>
+					<QuestionProvider>
+						<AvatarProvider>
+							<Route exact path="/questions/:questionId(\d+)" render={
+								props => <Question {...props} />
+							} />
+						</AvatarProvider>
 					</QuestionProvider>
 				</AnswerProvider>
 			</CharacterProvider>
