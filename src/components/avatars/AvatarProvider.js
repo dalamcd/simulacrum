@@ -23,12 +23,21 @@ export const AvatarProvider = props => {
 		.then(getAvatars);
 	}
 
-	const addAvatarImage = file => {
-		
+	const addAvatarImage = files => {
+		const formData = new FormData();
+
+		const file = files[0];
+		formData.append("file", file);
+		formData.append("upload_preset", "mnvi9b6b");
+
+		return fetch("https://api.cloudinary.com/v1_1/dalamcd/image/upload", {
+			method: "POST",
+			body: formData
+		})
 	}
 
 	return <AvatarContext.Provider value={{
-		avatars, getAvatars, addAvatar
+		avatars, getAvatars, addAvatar, addAvatarImage
 	}}>
 		{props.children}
 	</AvatarContext.Provider>

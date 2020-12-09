@@ -35,21 +35,46 @@
   ],
   "characters": [
     {
-      "name": "test",
-      "id": 1,
-      "primary": true
+      "name": "Caesar",
+      "primary": false,
+      "global": false,
+      "userId": 1,
+      "id": 1
     },
     {
-      "name": "test2",
-      "id": 2,
-      "primary": true
+      "name": "Caesar",
+      "primary": false,
+      "global": false,
+      "userId": 1,
+      "id": 2
     },
     {
-      "name": "test3",
-      "id": 3,
-      "primary": false
+      "name": "Bongo",
+      "primary": false,
+      "global": false,
+      "userId": 1,
+      "id": 3
     }
   ],
-  "avatars": [],
+  "avatars": [
+    {
+      "characterId": 1,
+      "random": false,
+      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607537865/download_p6yxow.jpg",
+      "id": 1
+    },
+    {
+      "characterId": 2,
+      "random": false,
+      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607537895/download_sg0xfe.jpg",
+      "id": 2
+    },
+    {
+      "characterId": 3,
+      "random": false,
+      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607538006/download_kyxdz2.jpg",
+      "id": 3
+    }
+  ],
   "users": []
 }
