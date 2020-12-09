@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, setState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { QuestionContext } from "./QuestionProvider"
 
 export const QuestionList = props => {

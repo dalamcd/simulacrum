@@ -1,10 +1,12 @@
-import React from "react"
-import { Route } from "react-router-dom"
-import { QuestionForm } from "./questions/QuestionForm"
+import React from "react";
+import { Route } from "react-router-dom";
+import { QuestionForm } from "./questions/QuestionForm";
 import { AnswerProvider } from './answers/AnswerProvider';
 import { CharacterProvider } from './characters/CharacterProvider';
 import { QuestionProvider } from './questions/QuestionProvider';
-import { Simulacrum } from "./Simulacrum"
+import { AvatarProvider } from "./avatars/AvatarProvider";
+import { CharacterForm } from "./characters/CharacterForm";
+import { Simulacrum } from "./Simulacrum";
 import { QuestionList } from "./questions/QuestionList";
 
 export const ApplicationViews = props => {
@@ -27,6 +29,13 @@ export const ApplicationViews = props => {
 					props => <QuestionList {...props} />
 				} />
 			</QuestionProvider>
+			<CharacterProvider>
+				<AvatarProvider>
+					<Route exact path="/add" render={
+						props => <CharacterForm {...props} />
+					} />
+				</AvatarProvider>
+			</CharacterProvider>
 		</>
 	)
 }

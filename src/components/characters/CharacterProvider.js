@@ -20,7 +20,6 @@ export const CharacterProvider = props => {
 			},
 			body: JSON.stringify(char)
 		})
-		.then(getCharacters);
 	}
 
 	return <CharacterContext.Provider value ={{
