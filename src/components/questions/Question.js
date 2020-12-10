@@ -13,13 +13,6 @@ export const Question = props => {
 	}, [])
 
 	const question = getQuestionById(props.match.params.questionId);
-	if (question) {
-		const answerRels = getAnswersForQuestionById(question.id);
-		const qAnswers = answerRels.map(ar => {
-			if (ar.questionId === question.id)
-				return answers.find(a => a.id === ar.answerId)
-		})
-	}
 
 	const listQuestion = q => {
 		if (q) {

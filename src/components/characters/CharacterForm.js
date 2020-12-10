@@ -1,4 +1,5 @@
 import React, { useContext, useRef } from "react";
+import { Redirect } from "react-router-dom"
 import { AvatarContext } from "../avatars/AvatarProvider";
 import { CharacterContext } from "./CharacterProvider";
 
@@ -36,7 +37,7 @@ export const CharacterForm = props => {
 			})
 			.then(getCharacters)
 	}
-
+	if(localStorage.getItem("app_user_id")) {
 	return (
 		<>
 			<h2>Add A Character</h2>
@@ -45,7 +46,7 @@ export const CharacterForm = props => {
 				<input type="text" id="character__name" ref={name} placeholder="Enter character's name" name="name" />
 			</div>
 			<div>
-				<label for="avatar">Choose a profile picture:</label>
+				<label htmlFor="avatar">Choose a profile picture:</label>
 				<input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
 			</div>
 			<button type="submit" className="btn btn-ask-question" onClick={evt => {
@@ -54,5 +55,7 @@ export const CharacterForm = props => {
 			}}>Add
         	</button>
 		</>
-	)
+	)} else {
+		return <Redirect to="/login" />
+	}
 }

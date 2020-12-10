@@ -1,15 +1,16 @@
 import React, { useContext, useEffect, useRef, useState } from "react"
+import { Link } from "react-router-dom"
 import { AnswerContext } from "./answers/AnswerProvider";
 import { CharacterContext } from "./characters/CharacterProvider";
 import { QuestionContext } from "./questions/QuestionProvider"
 
 export const Simulacrum = props => {
 
-	const { addQuestion } = useContext(QuestionContext);
+	const { questions, getQuestions, addQuestion } = useContext(QuestionContext);
 	const { answers, getAnswers } = useContext(AnswerContext);
 	const { characters, getCharacters } = useContext(CharacterContext);
 
-	const [initialAnswers, setInitialAnswers] = useState([])
+	const [initialQuestions, setInitialQuestions] = useState([])
 
 	const name = useRef(null);
 	const question = useRef(null)
@@ -17,18 +18,30 @@ export const Simulacrum = props => {
 
 	useEffect(() => {
 		getAnswers()
+			.then(getQuestions)
 			.then(getCharacters)
 	}, [])
 
 	useEffect(() => {
 		let tmp = [];
+		let qtmp = getQuestionsWithAnswers()
 		for (let i = 0; i <= 2; i++) {
-			if (answers[i]) {
-				tmp.push(answers[i])
+			if (qtmp[i]) {
+				tmp.push(qtmp[i])
 			}
 		}
-		setInitialAnswers(tmp);
-	}, [answers])
+		setInitialQuestions(tmp);
+	}, [questions])
+
+	const getQuestionsWithAnswers = () => {
+		let results = [];
+		questions.forEach(q => {
+			if(answers.find(a => parseInt(a.questionId) === parseInt(q.id))) {
+				results.push(q)
+			}
+		})
+		return results;
+	}
 
 	const askNewQuestion = () => {
 		addQuestion({
@@ -66,11 +79,12 @@ export const Simulacrum = props => {
 				Ask
         	</button>
 			<div className="home__recentQuestions">
-				{initialAnswers.map(ans => {
-					return <div key={ans.id} className="home_initialAnswers">{ans.response}</div>
+				{initialQuestions.map(q => {
+					return <Link to={`questions/${q.id}`}><div key={q.id} className="home_initialAnswers">{q.message}</div></Link>
 				})
 				}
 			</div>
+			<Link to="/admin">Admin</Link>
 		</>
 	)
 }
