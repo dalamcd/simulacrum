@@ -9,6 +9,9 @@ import { CharacterForm } from "./characters/CharacterForm";
 import { Simulacrum } from "./Simulacrum";
 import { QuestionList } from "./questions/QuestionList";
 import { Question } from "./questions/Question";
+import { Admin } from "./admin/Admin";
+import { Login } from "./auth/Login"
+import { AnswerForm } from "./answers/AnswerForm"
 
 export const ApplicationViews = props => {
 
@@ -48,6 +51,17 @@ export const ApplicationViews = props => {
 					} />
 				</AvatarProvider>
 			</CharacterProvider>
+			<QuestionProvider>
+				<Route exact path="/answer/:questionId(\d+)" render={
+					props => <AnswerForm {...props} />
+				} />
+			</QuestionProvider>
+			<Route exact path="/admin" render={
+				props => <Admin {...props} />
+			} />
+			<Route exact path="/login" render={
+				props => <Login {...props} />
+			} />
 		</>
 	)
 }
