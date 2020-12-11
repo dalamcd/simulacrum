@@ -52,7 +52,8 @@ export const AnswerForm = props => {
 				<select onChange={e => setSelectedChar(e.target.value)}>
 					<option value="0">Select a character...</option>
 					{characters.map(c => {
-						return <option key={c.id} value={c.id}>{c.name}</option>
+						if((c.global || c.userId === parseInt(localStorage.getItem("app_user_id")) && c.id !== 1 ))
+							return <option key={c.id} value={c.id}>{c.name}</option>
 					})}
 				</select>
 			</div>
