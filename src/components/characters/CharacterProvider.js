@@ -22,8 +22,10 @@ export const CharacterProvider = props => {
 		})
 	}
 
+	const getCharacterById = id => characters.find(c => c.id === parseInt(id))
+
 	return <CharacterContext.Provider value ={{
-		characters, getCharacters, addCharacter
+		characters, getCharacters, addCharacter, getCharacterById
 	}}>
 		{props.children}
 	</CharacterContext.Provider>

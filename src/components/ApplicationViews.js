@@ -51,11 +51,17 @@ export const ApplicationViews = props => {
 					} />
 				</AvatarProvider>
 			</CharacterProvider>
-			<QuestionProvider>
-				<Route exact path="/answer/:questionId(\d+)" render={
-					props => <AnswerForm {...props} />
-				} />
-			</QuestionProvider>
+			<AvatarProvider>
+				<CharacterProvider>
+					<QuestionProvider>
+						<AnswerProvider>
+							<Route exact path="/answer/:questionId(\d+)" render={
+								props => <AnswerForm {...props} />
+							} />
+						</AnswerProvider>
+					</QuestionProvider>
+				</CharacterProvider>
+			</AvatarProvider>
 			<Route exact path="/admin" render={
 				props => <Admin {...props} />
 			} />

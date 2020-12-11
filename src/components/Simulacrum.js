@@ -80,7 +80,7 @@ export const Simulacrum = props => {
         	</button>
 			<div className="home__recentQuestions">
 				{initialQuestions.map(q => {
-					return <Link to={`questions/${q.id}`}><div key={q.id} className="home_initialAnswers">{q.message}</div></Link>
+					return <Link to={`questions/${q.id}`} key={q.id}><div className="home_initialAnswers">{q.message}</div></Link>
 				})
 				}
 			</div>
