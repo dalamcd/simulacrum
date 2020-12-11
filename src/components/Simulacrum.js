@@ -84,7 +84,8 @@ export const Simulacrum = props => {
 				})
 				}
 			</div>
-			<Link to="/admin">Admin</Link>
+			<div><Link to="/questions">View all questions</Link></div>
+			<div><Link to="/admin">Admin</Link></div>
 		</>
 	)
 }

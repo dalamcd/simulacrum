@@ -23,10 +23,18 @@ export const AnswerProvider = props => {
 		.then(getAnswers);
 	}
 
+	const deleteAnswer = id => {
+		return fetch(`http://localhost:8088/answers/${id}`, {
+			method: "DELETE"
+		})
+		.then(getAnswers)
+		
+	}
+
 	const getAnswersForQuestionById = id => answers.filter(a => a.questionId === parseInt(id))
 
 	return <AnswerContext.Provider value={{
-		answers, getAnswers, getAnswersForQuestionById, addAnswer
+		answers, getAnswers, getAnswersForQuestionById, addAnswer, deleteAnswer
 	}}>
 		{props.children}
 	</AnswerContext.Provider>

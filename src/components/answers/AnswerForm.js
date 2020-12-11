@@ -1,16 +1,18 @@
 import React, { useContext, useEffect, useState, useRef } from "react"
+import { Redirect } from "react-router-dom"
 import { AvatarContext } from "../avatars/AvatarProvider"
-import { CharacterContext, CharacterProvider } from "../characters/CharacterProvider"
+import { CharacterContext } from "../characters/CharacterProvider"
 import { QuestionContext } from "../questions/QuestionProvider"
 import { AnswerContext } from "./AnswerProvider"
+import "./Answer.css"
 
 export const AnswerForm = props => {
 
 	const [selectedChar, setSelectedChar] = useState(0)
 
 	const { getQuestions, getQuestionById } = useContext(QuestionContext);
-	const { answers, addAnswer } = useContext(AnswerContext);
-	const { characters, getCharacters, getCharacterById } = useContext(CharacterContext);
+	const { addAnswer } = useContext(AnswerContext);
+	const { characters, getCharacters } = useContext(CharacterContext);
 	const { getAvatars, getAvatarByCharacterId } = useContext(AvatarContext);
 
 	//const av = useRef();
@@ -30,9 +32,9 @@ export const AnswerForm = props => {
 			window.alert("Please select a character")
 		} else {
 			addAnswer({
-				userId: localStorage.getItem("app_user_id"),
+				userId: parseInt(localStorage.getItem("app_user_id")),
 				avatarId: getAvatarByCharacterId(selectedChar).id,
-				characterId: selectedChar,
+				characterId: parseInt(selectedChar),
 				questionId: q.id,
 				timestamp: Date.now(),
 				quoteId: 0,
@@ -41,7 +43,7 @@ export const AnswerForm = props => {
 			props.history.push(`/questions/${props.match.params.questionId}`)
 		}
 	}
-
+	if(localStorage.getItem("app_user_id")) {
 	return (
 		<>
 			<h2>Answer A Question</h2>
@@ -54,7 +56,7 @@ export const AnswerForm = props => {
 					})}
 				</select>
 			</div>
-			{selectedChar > 0 && <img src={getAvatarByCharacterId(selectedChar).imagePath} />}
+			{selectedChar > 0 && <img className="avatarImage" src={getAvatarByCharacterId(selectedChar).imagePath} />}
 			<div>
 				Question:
 					{q && <div>{q.message}</div>}
@@ -70,4 +72,7 @@ export const AnswerForm = props => {
         	</button>
 		</>
 	)
+		} else {
+			return <Redirect to="/login" />
+		}
 }
