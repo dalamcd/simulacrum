@@ -20,7 +20,7 @@ export const QuestionForm = props => {
 		addQuestion({
 			visitorName: name.current.value,
 			message: question.current.value,
-			characterId: askee.current.value,
+			characterId: parseInt(askee.current.value),
 			time: Date.now()
 		})
 		props.history.push("/ask")

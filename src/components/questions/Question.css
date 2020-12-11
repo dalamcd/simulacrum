@@ -1,8 +1,43 @@
-.questionAvatar {
+.question__avatar__image {
 	width: 125px;
 	height: 125px;
 }
 
-.questionResponse {
+.question__avatar {
+	border: 1px solid black;
+	border-right: none;
+	border-bottom: none;
+	padding: 5px;
+}
+
+.question__avatar__name {
+	width: 130px;
+	padding: 5px;
+	font-size: small;
+}
+
+.question__responses {
+	padding-left: 10px;
+}
+
+.question__response {
 	display: flex
+}
+
+.question__response__text {
+	border: 1px solid black;
+	padding: 5px;
+	width: 70%;
+}
+
+.question__text {
+	padding-left: 20px;
+}
+
+.question {
+	margin: 10px;
+	margin-bottom: 20px;
+	padding: 5px;
+	border: 1px solid black;
+	border-radius: 5px;
 }

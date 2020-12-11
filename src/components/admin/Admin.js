@@ -1,4 +1,5 @@
-import { Route, Redirect, Link } from "react-router-dom"
+import { Route, Redirect } from "react-router-dom"
+import { NavBar } from "../nav/NavBar"
 
 export const Admin = props => {
 
@@ -9,8 +10,8 @@ export const Admin = props => {
 		if (localStorage.getItem("app_user_id")) {
 			return (
 				<>
-						<div><Link to="/questions">View questions</Link></div>
-						<div><Link to="/add">Add a character</Link></div>
+					<NavBar links={[{to: "/", text: "Ask A Question"}, {to: "/questions", text: "View Questions"},
+					{to: "/add", text: "Add a Character"}]} />
 				</>
 			)
 		} else {

@@ -23,27 +23,95 @@
     {
       "userId": "1",
       "avatarId": 5,
-      "characterId": "5",
+      "characterId": 5,
       "questionId": 5,
       "timestamp": 1607654232421,
       "quoteId": 0,
       "response": "Dude... you are giving us such a bad look right now.",
       "id": 15
+    },
+    {
+      "userId": 1,
+      "avatarId": 6,
+      "characterId": 6,
+      "questionId": 6,
+      "timestamp": 1607707741742,
+      "quoteId": 0,
+      "response": "Your code is bad and you should feel bad.",
+      "id": 16
+    },
+    {
+      "userId": 1,
+      "avatarId": 8,
+      "characterId": 8,
+      "questionId": 6,
+      "timestamp": 1607707885459,
+      "quoteId": 0,
+      "response": "*high fives*",
+      "id": 17
+    },
+    {
+      "userId": 1,
+      "avatarId": 7,
+      "characterId": 7,
+      "questionId": 6,
+      "timestamp": 1607707921491,
+      "quoteId": 0,
+      "response": "Don't feel bad, we all write awful, garbage code sometimes.",
+      "id": 18
+    },
+    {
+      "userId": 1,
+      "avatarId": 9,
+      "characterId": 9,
+      "questionId": 6,
+      "timestamp": 1607707945122,
+      "quoteId": 0,
+      "response": "Get EXCITED about the terrible code you wrote!",
+      "id": 19
     }
   ],
   "questions": [
     {
       "visitorName": "Devin",
       "message": "What is best in life?",
-      "characterId": "",
+      "characterId": 4,
       "time": 1607654137518,
       "id": 5
+    },
+    {
+      "visitorName": "NSS Student",
+      "message": "Why doesn't my code work?",
+      "characterId": "6",
+      "time": 1607707622327,
+      "id": 6
+    },
+    {
+      "visitorName": "A concerned parent",
+      "message": "Why is my child screaming?",
+      "characterId": "6",
+      "time": 1607713221710,
+      "id": 7
+    },
+    {
+      "visitorName": "Bob",
+      "message": "What is the meaning of life?",
+      "characterId": "1",
+      "time": 1607713845141,
+      "id": 8
     }
   ],
   "characters": [
     {
+      "name": "the entire panel",
+      "primary": true,
+      "global": false,
+      "userId": 1,
+      "id": 1
+    },
+    {
       "name": "Conan The Barbarian",
-      "primary": false,
+      "primary": true,
       "global": false,
       "userId": 1,
       "id": 4
@@ -54,6 +122,34 @@
       "global": false,
       "userId": 1,
       "id": 5
+    },
+    {
+      "name": "Jisie David",
+      "primary": true,
+      "global": false,
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "name": "Scott Silver",
+      "primary": false,
+      "global": false,
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "name": "Bryan Nilsen",
+      "primary": false,
+      "global": false,
+      "userId": 1,
+      "id": 8
+    },
+    {
+      "name": "Madi Peper",
+      "primary": false,
+      "global": false,
+      "userId": 1,
+      "id": 9
     }
   ],
   "avatars": [
@@ -68,13 +164,43 @@
       "random": false,
       "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607654028/conan-animated_qwcm0y.jpg",
       "id": 5
+    },
+    {
+      "characterId": 6,
+      "random": false,
+      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607707530/jisie_jbnb8x.png",
+      "id": 6
+    },
+    {
+      "characterId": 7,
+      "random": false,
+      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607707544/scott_buruht.png",
+      "id": 7
+    },
+    {
+      "characterId": 8,
+      "random": false,
+      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607707556/bryan_ho0lxu.png",
+      "id": 8
+    },
+    {
+      "characterId": 9,
+      "random": false,
+      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607707569/madi_elmdbw.png",
+      "id": 9
+    },
+    {
+      "characterId": 10,
+      "random": false,
+      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607713771/faceless_tpurb4.jpg",
+      "id": 10
     }
   ],
   "users": [
     {
       "id": 1,
       "name": "devin",
-      "password": "onion"
+      "password": "devin"
     }
   ]
 }
