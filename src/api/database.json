@@ -92,34 +92,6 @@
       "characterId": "6",
       "time": 1607713221710,
       "id": 7
-    },
-    {
-      "visitorName": "Bob",
-      "message": "What is the meaning of life?",
-      "characterId": "1",
-      "time": 1607713845141,
-      "id": 8
-    },
-    {
-      "visitorName": "Devin",
-      "message": "Testtest",
-      "characterId": "1",
-      "time": 1607714398848,
-      "id": 9
-    },
-    {
-      "visitorName": "sdfsd",
-      "message": "sdfsf",
-      "characterId": "1",
-      "time": 1607715844924,
-      "id": 10
-    },
-    {
-      "visitorName": "",
-      "message": "",
-      "characterId": 1,
-      "time": 1607715848029,
-      "id": 11
     }
   ],
   "characters": [
