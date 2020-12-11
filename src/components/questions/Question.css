@@ -1,0 +1,8 @@
+.questionAvatar {
+	width: 125px;
+	height: 125px;
+}
+
+.questionResponse {
+	display: flex
+}

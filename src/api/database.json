@@ -1,102 +1,73 @@
 {
   "answers": [
     {
-      "questionId": 1,
-      "response": "GOOD JOB",
-      "id": 1
+      "userId": "1",
+      "avatarId": 4,
+      "characterId": "4",
+      "questionId": 5,
+      "timestamp": 1607654203383,
+      "quoteId": 0,
+      "response": "To crush your enemies, to see them driven before you, and to hear the lamentations of their women.",
+      "id": 13
     },
     {
-      "questionId": 1,
-      "response": "GOODEST JOB",
-      "id": 2
+      "userId": "1",
+      "avatarId": 5,
+      "characterId": "5",
+      "questionId": 5,
+      "timestamp": 1607654209775,
+      "quoteId": 0,
+      "response": "",
+      "id": 14
     },
     {
-      "questionId": 2,
-      "response": "BETTER JOB",
-      "id": 3
-    },
-    {
-      "questionId": 3,
-      "response": "BEST JOB",
-      "id": 4
-    },
-    {
-      "questionId": 4,
-      "response": "BESTEST JOB",
-      "id": 5
+      "userId": "1",
+      "avatarId": 5,
+      "characterId": "5",
+      "questionId": 5,
+      "timestamp": 1607654232421,
+      "quoteId": 0,
+      "response": "Dude... you are giving us such a bad look right now.",
+      "id": 15
     }
   ],
   "questions": [
     {
-      "visitorName": "sdfsdf",
-      "message": "Ask a questionsdfsdf",
-      "characterId": "1",
-      "time": 1607459975029,
-      "id": 1
-    },
-    {
-      "visitorName": "sdfsdf",
-      "message": "Ask a questionsdfsdf",
-      "characterId": "1",
-      "time": 1607459976917,
-      "id": 2
-    },
-    {
-      "visitorName": "65465",
-      "message": "65654",
+      "visitorName": "Devin",
+      "message": "What is best in life?",
       "characterId": "",
-      "time": 1607550982116,
-      "id": 3
-    },
-    {
-      "visitorName": "65465",
-      "message": "65654",
-      "characterId": "",
-      "time": 1607550982116,
-      "id": 4
+      "time": 1607654137518,
+      "id": 5
     }
   ],
   "characters": [
     {
-      "name": "Caesar",
+      "name": "Conan The Barbarian",
       "primary": false,
       "global": false,
       "userId": 1,
-      "id": 1
+      "id": 4
     },
     {
-      "name": "Caesar",
+      "name": "Animated Conan",
       "primary": false,
       "global": false,
       "userId": 1,
-      "id": 2
-    },
-    {
-      "name": "Bongo",
-      "primary": false,
-      "global": false,
-      "userId": 1,
-      "id": 3
+      "id": 5
     }
   ],
   "avatars": [
     {
-      "characterId": 1,
+      "characterId": 4,
       "random": false,
-      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607537865/download_p6yxow.jpg",
-      "id": 1
+      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607653873/conan-the-barbarian_uyogv8.jpg",
+      "id": 4
     },
     {
-      "characterId": 2,
+      "characterId": 5,
       "random": false,
-      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607537895/download_sg0xfe.jpg",
-      "id": 2
-    },
-    {
-      "characterId": 3,
-      "random": false,
-      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607538006/download_kyxdz2.jpg",
-      "id": 3
+      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607654028/conan-animated_qwcm0y.jpg",
+      "id": 5
     }
   ],
   "users": [

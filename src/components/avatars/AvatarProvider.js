@@ -36,8 +36,10 @@ export const AvatarProvider = props => {
 		})
 	}
 
+	const getAvatarByCharacterId = id => avatars.find(a => parseInt(a.characterId) === parseInt(id))
+
 	return <AvatarContext.Provider value={{
-		avatars, getAvatars, addAvatar, addAvatarImage
+		avatars, getAvatars, addAvatar, addAvatarImage, getAvatarByCharacterId
 	}}>
 		{props.children}
 	</AvatarContext.Provider>

@@ -12,10 +12,21 @@ export const AnswerProvider = props => {
 		.then(setAnswers)
 	}
 
+	const addAnswer = answer => {
+		return fetch("http://localhost:8088/answers",{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify(answer)
+		})
+		.then(getAnswers);
+	}
+
 	const getAnswersForQuestionById = id => answers.filter(a => a.questionId === parseInt(id))
 
 	return <AnswerContext.Provider value={{
-		answers, getAnswers, getAnswersForQuestionById
+		answers, getAnswers, getAnswersForQuestionById, addAnswer
 	}}>
 		{props.children}
 	</AnswerContext.Provider>
