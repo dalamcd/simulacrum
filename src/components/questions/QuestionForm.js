@@ -17,18 +17,24 @@ export const QuestionForm = props => {
 	}, [])
 
 	const askNewQuestion = () => {
-		addQuestion({
-			visitorName: name.current.value,
-			message: question.current.value,
-			characterId: parseInt(askee.current.value),
-			time: Date.now()
-		})
-		props.history.push("/ask")
+		if (name.current.value === "") {
+			window.alert("Please provide your name.");
+		} else if (question.current.value === "") {
+			window.alert("Please ask a question.");
+		} else {
+			addQuestion({
+				visitorName: name.current.value,
+				message: question.current.value,
+				characterId: parseInt(askee.current.value),
+				time: Date.now()
+			})
+			props.history.push("/ask")
+		}
 	}
 
 	return (
 		<>
-			Thank you for your question. Ask another 
+			Thank you for your question. Ask another
 			or <Link to="/questions">view the list of questions</Link>
 			<h2>Ask a question of the panel</h2>
 			<div>
@@ -37,7 +43,7 @@ export const QuestionForm = props => {
 			</div>
 			<div>
 				<label htmlFor="question">Your question:</label>
-				<textarea ref={question} defaultValue="Ask a question"></textarea>
+				<textarea ref={question} placeholder="Ask a question"></textarea>
 			</div>
 			<div>
 				<label htmlFor="wisom">To whom will you direct your question: </label>

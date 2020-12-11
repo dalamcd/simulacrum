@@ -99,6 +99,27 @@
       "characterId": "1",
       "time": 1607713845141,
       "id": 8
+    },
+    {
+      "visitorName": "Devin",
+      "message": "Testtest",
+      "characterId": "1",
+      "time": 1607714398848,
+      "id": 9
+    },
+    {
+      "visitorName": "sdfsd",
+      "message": "sdfsf",
+      "characterId": "1",
+      "time": 1607715844924,
+      "id": 10
+    },
+    {
+      "visitorName": "",
+      "message": "",
+      "characterId": 1,
+      "time": 1607715848029,
+      "id": 11
     }
   ],
   "characters": [
@@ -126,14 +147,14 @@
     {
       "name": "Jisie David",
       "primary": true,
-      "global": false,
+      "global": true,
       "userId": 1,
       "id": 6
     },
     {
       "name": "Scott Silver",
       "primary": false,
-      "global": false,
+      "global": true,
       "userId": 1,
       "id": 7
     },
@@ -150,6 +171,13 @@
       "global": false,
       "userId": 1,
       "id": 9
+    },
+    {
+      "name": "Albert Einstein",
+      "primary": false,
+      "global": false,
+      "userId": 2,
+      "id": 10
     }
   ],
   "avatars": [
@@ -192,7 +220,7 @@
     {
       "characterId": 10,
       "random": false,
-      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607713771/faceless_tpurb4.jpg",
+      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607719766/Albert_Einstein_Head_ncp5fb.jpg",
       "id": 10
     }
   ],
@@ -201,6 +229,11 @@
       "id": 1,
       "name": "devin",
       "password": "devin"
+    },
+    {
+      "id": 2,
+      "name": "test",
+      "password": "test"
     }
   ]
 }
