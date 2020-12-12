@@ -6,54 +6,61 @@ import { CharacterContext } from "./CharacterProvider";
 
 export const CharacterForm = props => {
 
-	const name = useRef(null);
-	const primary = useRef(null);
+	const name = useRef();
+	const primary = useRef();
+	const global = useRef();
 
 	const { addAvatarImage, addAvatar, getAvatars } = useContext(AvatarContext);
 	const { addCharacter, getCharacters } = useContext(CharacterContext)
 
-	
 	const addNewCharacter = () => {
 
 		let characterId;
 		const file = document.querySelector("#avatar").files;
-		console.log(primary);
 
-		addCharacter({
-			name: name.current.value,
-			primary: primary.current.checked,
-			global: false,
-			userId: parseInt(localStorage.getItem("app_user_id"))
-		})
-			.then(res => res.json())
-			.then(res => {
-				characterId = res.id;
-				addAvatarImage(file)
-					.then(res => res.json())
-					.then(data => {
-						addAvatar({
-							characterId: parseInt(characterId),
-							random: false,
-							imagePath: data.url
-						})
-					})
+		if (name.current.value === "") {
+			window.alert("Please include a name.")
+		} else if (!file[0]) {
+			window.alert("Please include an image.")
+		} else {
+			addCharacter({
+				name: name.current.value,
+				primary: primary.current.checked,
+				global: global.current.checked,
+				userId: parseInt(localStorage.getItem("app_user_id"))
 			})
-			.then(getCharacters)
-			.then(getAvatars)
-			.then(() => document.getElementById("addCharacterForm").reset())
+				.then(res => res.json())
+				.then(res => {
+					characterId = res.id;
+					addAvatarImage(file)
+						.then(res => res.json())
+						.then(data => {
+							addAvatar({
+								characterId: parseInt(characterId),
+								random: false,
+								imagePath: data.url
+							})
+						})
+				})
+				.then(getCharacters)
+				.then(getAvatars)
+				.then(() => document.getElementById("addCharacterForm").reset())
+		}
 
 	}
 	if (localStorage.getItem("app_user_id")) {
 		return (
 			<>
-			<NavBar links={[{to: "/", text: "Ask A Question"}]} />
+				<NavBar links={[{ to: "/", text: "Ask A Question" }]} />
 				<h2>Add A Character</h2>
 				<form id="addCharacterForm">
 					<div>
 						<label htmlFor="name">Character name:</label>
 						<input type="text" id="character__name" ref={name} placeholder="Enter character's name" name="name" />
-						<label htmlFor="primaryChar">Global Character</label>
+						<label htmlFor="primaryChar">Primary Character</label>
 						<input type="checkbox" id="primaryChar" value="Primary" ref={primary} />
+						<label htmlFor="globalChar">Global Character</label>
+						<input type="checkbox" id="globalChar" value="Global" ref={global} />
 					</div>
 					<div>
 						<label htmlFor="avatar">Choose a profile picture:</label>
