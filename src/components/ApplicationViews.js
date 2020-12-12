@@ -12,6 +12,7 @@ import { Question } from "./questions/Question";
 import { Admin } from "./admin/Admin";
 import { Login } from "./auth/Login"
 import { AnswerForm } from "./answers/AnswerForm"
+import { AvatarForm } from "./avatars/AvatarForm";
 
 export const ApplicationViews = props => {
 
@@ -50,6 +51,9 @@ export const ApplicationViews = props => {
 				<AvatarProvider>
 					<Route exact path="/add" render={
 						props => <CharacterForm {...props} />
+					} />
+					<Route exact path="/add/avatar" render={
+						props => <AvatarForm {...props} />
 					} />
 				</AvatarProvider>
 			</CharacterProvider>
