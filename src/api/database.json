@@ -1,9 +1,9 @@
 {
   "answers": [
     {
-      "userId": "1",
+      "userId": 1,
       "avatarId": 4,
-      "characterId": "4",
+      "characterId": 4,
       "questionId": 5,
       "timestamp": 1607654203383,
       "quoteId": 0,
@@ -11,9 +11,9 @@
       "id": 13
     },
     {
-      "userId": "1",
+      "userId": 1,
       "avatarId": 5,
-      "characterId": "5",
+      "characterId": 5,
       "questionId": 5,
       "timestamp": 1607654209775,
       "quoteId": 0,
