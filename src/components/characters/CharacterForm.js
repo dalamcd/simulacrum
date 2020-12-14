@@ -10,7 +10,7 @@ export const CharacterForm = props => {
 	const primary = useRef();
 	const global = useRef();
 	const form = useRef();
-	const f = useRef(null)
+	const f = useRef()
 
 	const { addAvatarImage, addAvatar, getAvatars } = useContext(AvatarContext);
 	const { addCharacter, getCharacters } = useContext(CharacterContext)
