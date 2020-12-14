@@ -194,6 +194,12 @@
       "random": false,
       "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607719766/Albert_Einstein_Head_ncp5fb.jpg",
       "id": 10
+    },
+    {
+      "characterId": 4,
+      "random": true,
+      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607802671/marvin_f2tbtp.png",
+      "id": 11
     }
   ],
   "users": [
