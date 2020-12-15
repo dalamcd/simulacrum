@@ -8,9 +8,10 @@ export const QuestionForm = props => {
 	const { addQuestion } = useContext(QuestionContext);
 	const { characters, getCharacters } = useContext(CharacterContext);
 
-	const name = useRef(null);
-	const question = useRef(null)
-	const askee = useRef(null)
+	const name = useRef();
+	const question = useRef()
+	const askee = useRef()
+	const form = useRef();
 
 	useEffect(() => {
 		getCharacters()
@@ -28,7 +29,7 @@ export const QuestionForm = props => {
 				characterId: parseInt(askee.current.value),
 				time: Date.now()
 			})
-			props.history.push("/ask")
+			form.current.reset();
 		}
 	}
 
@@ -37,6 +38,7 @@ export const QuestionForm = props => {
 			Thank you for your question. Ask another
 			or <Link to="/questions">view the list of questions</Link>
 			<h2>Ask a question of the panel</h2>
+			<form ref={form}>
 			<div>
 				<label htmlFor="name">Your name:</label>
 				<input type="text" id="home__name" ref={name} placeholder="Enter your name" name="name" />
@@ -59,6 +61,7 @@ export const QuestionForm = props => {
 			}}>
 				Ask
         	</button>
+			</form>
 		</>
 	)
 }

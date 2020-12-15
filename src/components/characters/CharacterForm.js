@@ -9,18 +9,20 @@ export const CharacterForm = props => {
 	const name = useRef();
 	const primary = useRef();
 	const global = useRef();
+	const form = useRef();
+	const f = useRef()
 
 	const { addAvatarImage, addAvatar, getAvatars } = useContext(AvatarContext);
 	const { addCharacter, getCharacters } = useContext(CharacterContext)
 
+
 	const addNewCharacter = () => {
 
 		let characterId;
-		const file = document.querySelector("#avatar").files;
 
 		if (name.current.value === "") {
 			window.alert("Please include a name.")
-		} else if (!file[0]) {
+		} else if (!f.current.files[0]) {
 			window.alert("Please include an image.")
 		} else {
 			addCharacter({
@@ -32,7 +34,7 @@ export const CharacterForm = props => {
 				.then(res => res.json())
 				.then(res => {
 					characterId = res.id;
-					addAvatarImage(file)
+					addAvatarImage(f.current.files)
 						.then(res => res.json())
 						.then(data => {
 							addAvatar({
@@ -44,7 +46,7 @@ export const CharacterForm = props => {
 				})
 				.then(getCharacters)
 				.then(getAvatars)
-				.then(() => document.getElementById("addCharacterForm").reset())
+				.then(() => form.current.reset())
 		}
 
 	}
@@ -53,7 +55,7 @@ export const CharacterForm = props => {
 			<>
 				<NavBar links={[{ to: "/", text: "Ask A Question" }]} />
 				<h2>Add A Character</h2>
-				<form id="addCharacterForm">
+				<form id="addCharacterForm" ref={form}>
 					<div>
 						<label htmlFor="name">Character name:</label>
 						<input type="text" id="character__name" ref={name} placeholder="Enter character's name" name="name" />
@@ -64,7 +66,7 @@ export const CharacterForm = props => {
 					</div>
 					<div>
 						<label htmlFor="avatar">Choose a profile picture:</label>
-						<input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+						<input type="file" ref={f} id="avatar" name="avatar" accept="image/png, image/jpeg" />
 					</div>
 					<button type="submit" className="btn btn-ask-question" onClick={evt => {
 						evt.preventDefault()
