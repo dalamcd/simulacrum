@@ -78,8 +78,6 @@ export const Question = props => {
 	return (
 		<>
 			{listQuestion(question)}
-			{/* {question ? question.message : ""} */}
-			{/* {qAnswers.map(qa => qa.response)} */}
 		</>
 	)
 }
