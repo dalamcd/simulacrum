@@ -69,6 +69,16 @@
       "quoteId": 0,
       "response": "Get EXCITED about the terrible code you wrote!",
       "id": 19
+    },
+    {
+      "userId": 1,
+      "avatarId": 5,
+      "characterId": 5,
+      "questionId": 6,
+      "timestamp": 1608067228492,
+      "quoteId": 0,
+      "response": "You suck!",
+      "id": 20
     }
   ],
   "questions": [
@@ -82,29 +92,29 @@
     {
       "visitorName": "NSS Student",
       "message": "Why doesn't my code work?",
-      "characterId": "6",
+      "characterId": 6,
       "time": 1607707622327,
       "id": 6
     },
     {
       "visitorName": "A concerned parent",
       "message": "Why is my child screaming?",
-      "characterId": "6",
+      "characterId": 6,
       "time": 1607713221710,
       "id": 7
     },
     {
-      "visitorName": "Test",
-      "message": "13234",
+      "visitorName": "Devin",
+      "message": "Why",
       "characterId": "4",
-      "time": 1607975110948,
+      "time": 1608060036041,
       "id": 8
     },
     {
-      "visitorName": "ert",
-      "message": "ertre",
-      "characterId": "1",
-      "time": 1607982153978,
+      "visitorName": "Jasmin",
+      "message": "W;;dkfsjsldk",
+      "characterId": "6",
+      "time": 1608067203212,
       "id": 9
     }
   ],
@@ -212,8 +222,14 @@
     {
       "characterId": 4,
       "random": true,
-      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607802671/marvin_f2tbtp.png",
+      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1608049277/marvin_yfacc4.png",
       "id": 11
+    },
+    {
+      "characterId": 4,
+      "random": true,
+      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1608052837/Albert_Einstein_Head_o1htpq.jpg",
+      "id": 12
     }
   ],
   "users": [

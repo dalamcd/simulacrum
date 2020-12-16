@@ -11,6 +11,8 @@ export const AvatarForm = () => {
 
 	const random = useRef();
 	const char = useRef();
+	const f = useRef();
+	const form = useRef();
 
 	useEffect(() => {
 		getCharacters();
@@ -18,12 +20,10 @@ export const AvatarForm = () => {
 
 	const addNewAvatar = () => {
 
-		const file = document.querySelector("#avatar").files;
-
-		if (!file[0]) {
+		if (!f.current.files[0]) {
 			window.alert("Please include an image.")
 		} else {
-			addAvatarImage(file)
+			addAvatarImage(f.current.files)
 				.then(res => res.json())
 				.then(data => {
 					addAvatar({
@@ -33,7 +33,7 @@ export const AvatarForm = () => {
 					})
 				})
 				.then(getAvatars)
-				.then(() => document.getElementById("addAvatarForm").reset())
+				.then(() => form.current.reset())
 		}
 
 	}
@@ -43,7 +43,7 @@ export const AvatarForm = () => {
 				<NavBar links={[{ to: "/", text: "Ask A Question" }, { to: "/questions", text: "View Questions" },
 				{ to: "/add", text: "Add a Character" }]} />
 				<h2>Add An Avatar</h2>
-				<form id="addAvatarForm">
+				<form id="addAvatarForm" ref={form}>
 					<div>
 						<label htmlFor="name">Character:</label>
 						<select ref={char}>
@@ -57,7 +57,7 @@ export const AvatarForm = () => {
 					</div>
 					<div>
 						<label htmlFor="avatar">Choose a profile picture:</label>
-						<input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+						<input ref={f} type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
 					</div>
 					<button type="submit" className="btn btn-add-avatar" onClick={evt => {
 						evt.preventDefault()
