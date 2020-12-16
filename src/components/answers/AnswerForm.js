@@ -14,7 +14,8 @@ export const AnswerForm = props => {
 	const { getQuestions, getQuestionById } = useContext(QuestionContext);
 	const { addAnswer } = useContext(AnswerContext);
 	const { characters, getCharacters } = useContext(CharacterContext);
-	const { getAvatars, getAvatarByCharacterId, getAvatarById, getRandomAvatarsByCharacterId } = useContext(AvatarContext);
+	const { getAvatars, getAvatarByCharacterId, getAvatarById, getRandomAvatarsByCharacterId,
+		getNonRandomAvatarsByCharacterId } = useContext(AvatarContext);
 
 	//const av = useRef();
 	const response = useRef();
@@ -77,6 +78,14 @@ export const AnswerForm = props => {
 				</div>
 				<form ref={form}>
 					{selectedChar > 0 && getRandomAvatarsByCharacterId(selectedChar).map(av => {
+						return (
+							<>
+								<img key={av.id} className="avatarImage" src={av.imagePath} />
+								<input type="radio" key={av.imagePath} ref={radio} name="avatarRadio" value={av.id} onChange={e => setSelectedAv(e.target.value)} />
+							</>
+						)
+					})}
+					{selectedChar > 0 && getNonRandomAvatarsByCharacterId(selectedChar).map(av => {
 						return (
 							<>
 								<img key={av.id} className="avatarImage" src={av.imagePath} />
