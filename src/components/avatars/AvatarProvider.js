@@ -40,10 +40,15 @@ export const AvatarProvider = props => {
 
 	const getAvatarsByCharacterId = id => avatars.filter(a => parseInt(a.characterId) === parseInt(id))
 
+	const getRandomAvatarsByCharacterId = id => avatars.filter(a => parseInt(a.characterId) === parseInt(id) && a.random)
+
+	const getNonRandomAvatarsByCharacterId = id => avatars.filter(a => parseInt(a.characterId) === parseInt(id) && !a.random)
+	
 	const getAvatarById = id => avatars.find(a => a.id === parseInt(id))
 
 	return <AvatarContext.Provider value={{
-		avatars, getAvatars, addAvatar, addAvatarImage, getAvatarByCharacterId, getAvatarsByCharacterId, getAvatarById
+		avatars, getAvatars, addAvatar, addAvatarImage, getAvatarByCharacterId, getAvatarsByCharacterId, getAvatarById,
+		getRandomAvatarsByCharacterId, getNonRandomAvatarsByCharacterId
 	}}>
 		{props.children}
 	</AvatarContext.Provider>

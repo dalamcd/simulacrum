@@ -179,43 +179,43 @@
   "avatars": [
     {
       "characterId": 4,
-      "random": false,
+      "random": true,
       "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607653873/conan-the-barbarian_uyogv8.jpg",
       "id": 4
     },
     {
       "characterId": 5,
-      "random": false,
+      "random": true,
       "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607654028/conan-animated_qwcm0y.jpg",
       "id": 5
     },
     {
       "characterId": 6,
-      "random": false,
+      "random": true,
       "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607707530/jisie_jbnb8x.png",
       "id": 6
     },
     {
       "characterId": 7,
-      "random": false,
+      "random": true,
       "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607707544/scott_buruht.png",
       "id": 7
     },
     {
       "characterId": 8,
-      "random": false,
+      "random": true,
       "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607707556/bryan_ho0lxu.png",
       "id": 8
     },
     {
       "characterId": 9,
-      "random": false,
+      "random": true,
       "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607707569/madi_elmdbw.png",
       "id": 9
     },
     {
       "characterId": 10,
-      "random": false,
+      "random": true,
       "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607719766/Albert_Einstein_Head_ncp5fb.jpg",
       "id": 10
     },

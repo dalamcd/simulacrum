@@ -14,14 +14,14 @@ export const AnswerForm = props => {
 	const { getQuestions, getQuestionById } = useContext(QuestionContext);
 	const { addAnswer } = useContext(AnswerContext);
 	const { characters, getCharacters } = useContext(CharacterContext);
-	const { getAvatars, getAvatarByCharacterId, getAvatarById, getAvatarsByCharacterId } = useContext(AvatarContext);
+	const { getAvatars, getAvatarByCharacterId, getAvatarById, getRandomAvatarsByCharacterId } = useContext(AvatarContext);
 
 	//const av = useRef();
 	const response = useRef();
 	const radio = useRef();
 	const form = useRef();
 
-	let randomAv = Math.floor(Math.random() * getAvatarsByCharacterId(selectedChar).length);
+	let randomAv = Math.floor(Math.random() * getRandomAvatarsByCharacterId(selectedChar).length);
 
 	useEffect(() => {
 		// This is hacky and bad and I hate it. There MUST be a better way to find defaultChecked on a radio group, but
@@ -76,7 +76,7 @@ export const AnswerForm = props => {
 					</select>
 				</div>
 				<form ref={form}>
-					{selectedChar > 0 && getAvatarsByCharacterId(selectedChar).map(av => {
+					{selectedChar > 0 && getRandomAvatarsByCharacterId(selectedChar).map(av => {
 						return (
 							<>
 								<img key={av.id} className="avatarImage" src={av.imagePath} />
