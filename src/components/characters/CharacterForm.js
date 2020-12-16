@@ -39,7 +39,7 @@ export const CharacterForm = props => {
 						.then(data => {
 							addAvatar({
 								characterId: parseInt(characterId),
-								random: false,
+								random: true,
 								imagePath: data.url
 							})
 						})

@@ -11,7 +11,7 @@ export const Question = props => {
 	const { getQuestions, getQuestionById } = useContext(QuestionContext);
 	const { answers, getAnswers, getAnswersForQuestionById, deleteAnswer } = useContext(AnswerContext);
 	const { getCharacters, getCharacterById } = useContext(CharacterContext);
-	const { getAvatars, getAvatarByCharacterId } = useContext(AvatarContext);
+	const { getAvatars, getAvatarById } = useContext(AvatarContext);
 
 	const [update, setUpdate] = useState([])
 
@@ -57,7 +57,7 @@ export const Question = props => {
 						<div key={qa.id} className="question__response">
 							<div className="question__characterContainer">
 								<div className="question__avatar">
-								<img className="question__avatar__image" src={getAvatarByCharacterId(qa.characterId).imagePath} />
+								<img className="question__avatar__image" src={getAvatarById(qa.avatarId).imagePath} />
 								</div>
 								<div className="question__avatar__name">
 									{getCharacterById(qa.characterId).name}

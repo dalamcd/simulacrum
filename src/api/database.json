@@ -82,29 +82,29 @@
     {
       "visitorName": "NSS Student",
       "message": "Why doesn't my code work?",
-      "characterId": "6",
+      "characterId": 6,
       "time": 1607707622327,
       "id": 6
     },
     {
       "visitorName": "A concerned parent",
       "message": "Why is my child screaming?",
-      "characterId": "6",
+      "characterId": 6,
       "time": 1607713221710,
       "id": 7
     },
     {
-      "visitorName": "Test",
-      "message": "13234",
+      "visitorName": "Devin",
+      "message": "Why",
       "characterId": "4",
-      "time": 1607975110948,
+      "time": 1608060036041,
       "id": 8
     },
     {
-      "visitorName": "ert",
-      "message": "ertre",
-      "characterId": "1",
-      "time": 1607982153978,
+      "visitorName": "Jasmin",
+      "message": "W;;dkfsjsldk",
+      "characterId": "6",
+      "time": 1608067203212,
       "id": 9
     }
   ],
@@ -169,43 +169,43 @@
   "avatars": [
     {
       "characterId": 4,
-      "random": false,
+      "random": true,
       "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607653873/conan-the-barbarian_uyogv8.jpg",
       "id": 4
     },
     {
       "characterId": 5,
-      "random": false,
+      "random": true,
       "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607654028/conan-animated_qwcm0y.jpg",
       "id": 5
     },
     {
       "characterId": 6,
-      "random": false,
+      "random": true,
       "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607707530/jisie_jbnb8x.png",
       "id": 6
     },
     {
       "characterId": 7,
-      "random": false,
+      "random": true,
       "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607707544/scott_buruht.png",
       "id": 7
     },
     {
       "characterId": 8,
-      "random": false,
+      "random": true,
       "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607707556/bryan_ho0lxu.png",
       "id": 8
     },
     {
       "characterId": 9,
-      "random": false,
+      "random": true,
       "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607707569/madi_elmdbw.png",
       "id": 9
     },
     {
       "characterId": 10,
-      "random": false,
+      "random": true,
       "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607719766/Albert_Einstein_Head_ncp5fb.jpg",
       "id": 10
     }
