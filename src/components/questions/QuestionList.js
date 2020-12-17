@@ -70,6 +70,9 @@ export const QuestionList = props => {
 											</div>
 										</div>
 									</div>
+									<button className="answerButton" onClick={() => {
+											props.history.push(`/answer/${q.id}`)
+										}}>Answer</button>
 								</div>
 							)
 						})}
@@ -88,6 +91,9 @@ export const QuestionList = props => {
 											</div>
 										</div>
 									</div>
+									<button className="answerButton" onClick={() => {
+											props.history.push(`/answer/${q.id}`)
+										}}>Answer</button>
 								</div>
 							)
 						})}
