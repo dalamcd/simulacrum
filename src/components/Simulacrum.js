@@ -2,7 +2,10 @@ import React, { useContext, useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import { AnswerContext } from "./answers/AnswerProvider";
 import { CharacterContext } from "./characters/CharacterProvider";
+import { Footer } from "./nav/Footer";
+import { QuestionForm } from "./questions/QuestionForm";
 import { QuestionContext } from "./questions/QuestionProvider"
+import "./Simulacrum.css"
 
 export const Simulacrum = props => {
 
@@ -36,7 +39,7 @@ export const Simulacrum = props => {
 	const getQuestionsWithAnswers = () => {
 		let results = [];
 		questions.forEach(q => {
-			if(answers.find(a => parseInt(a.questionId) === parseInt(q.id))) {
+			if (answers.find(a => parseInt(a.questionId) === parseInt(q.id))) {
 				results.push(q)
 			}
 		})
@@ -44,54 +47,33 @@ export const Simulacrum = props => {
 	}
 
 	const askNewQuestion = () => {
-		if(name.current.value === "") {
+		if (name.current.value === "") {
 			window.alert("Please provide your name.");
 		} else if (question.current.value === "") {
 			window.alert("Please ask a question.");
 		} else {
-		addQuestion({
-			visitorName: name.current.value,
-			message: question.current.value,
-			characterId: askee.current.value,
-			time: Date.now()
-		})
-		props.history.push("/ask")
-	}
+			addQuestion({
+				visitorName: name.current.value,
+				message: question.current.value,
+				characterId: askee.current.value,
+				time: Date.now()
+			})
+			props.history.push("/ask")
+		}
 	}
 
 	return (
 		<>
-			<h2>Ask a question of the panel</h2>
-			<div>
-				<label htmlFor="name">Your name:</label>
-				<input type="text" id="home__name" ref={name} placeholder="Enter your name" name="name" />
-			</div>
-			<div>
-				<label htmlFor="question">Your question:</label>
-				<textarea ref={question} placeholder="Ask a question"></textarea>
-			</div>
-			<div>
-				<label htmlFor="wisom">To whom will you direct your question: </label>
-				<select name="wisdom" ref={askee}>
-					{characters.map(c => {
-						if (c.primary) return <option key={c.id} value={c.id}>{c.name}</option>
-					})}
-				</select>
-			</div>
-			<button type="submit" className="btn btn-ask-question" onClick={evt => {
-				evt.preventDefault()
-				askNewQuestion()
-			}}>
-				Ask
-        	</button>
+			{props.location.pathname === "/ask" ? <h2>Thank you for your question. </h2> : ``}
+			<QuestionForm {...props}/>
+			<h2>Recently Answered Questions</h2>
 			<div className="home__recentQuestions">
 				{initialQuestions.map(q => {
-					return <Link to={`questions/${q.id}`} key={q.id}><div className="home_initialAnswers">{q.message}</div></Link>
+					return <div key={q.id} className="home_initialAnswers"><Link to={`questions/${q.id}`}>{q.message}</Link></div>
 				})
 				}
 			</div>
-			<div><Link to="/questions">View all questions</Link></div>
-			<div><Link to="/admin">Admin</Link></div>
+			<Footer admin={true}/>
 		</>
 	)
 }

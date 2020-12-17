@@ -24,7 +24,7 @@ export const ApplicationViews = props => {
 						<Route exact path="/" render={
 							props => <Simulacrum {...props} />} />
 						<Route exact path="/ask" render={
-							props => <QuestionForm {...props} />
+							props => <Simulacrum {...props} />
 						} />
 					</QuestionProvider>
 				</AnswerProvider>
@@ -40,13 +40,15 @@ export const ApplicationViews = props => {
 					</QuestionProvider>
 				</AnswerProvider>
 			</CharacterProvider>
-			<QuestionProvider>
-				<AnswerProvider>
-					<Route exact path="/questions" render={
-						props => <QuestionList {...props} />
-					} />
-				</AnswerProvider>
-			</QuestionProvider>
+			<CharacterProvider>
+				<QuestionProvider>
+					<AnswerProvider>
+						<Route exact path="/questions" render={
+							props => <QuestionList {...props} />
+						} />
+					</AnswerProvider>
+				</QuestionProvider>
+			</CharacterProvider>
 			<CharacterProvider>
 				<AvatarProvider>
 					<Route exact path="/add" render={
