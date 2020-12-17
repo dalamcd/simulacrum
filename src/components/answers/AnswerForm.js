@@ -5,6 +5,7 @@ import { CharacterContext } from "../characters/CharacterProvider"
 import { QuestionContext } from "../questions/QuestionProvider"
 import { AnswerContext } from "./AnswerProvider"
 import "./Answer.css"
+import { NavBar } from "../nav/NavBar"
 
 export const AnswerForm = props => {
 
@@ -63,50 +64,59 @@ export const AnswerForm = props => {
 	if (localStorage.getItem("app_user_id")) {
 		return (
 			<>
+				<NavBar links={[{ to: "/", text: "Ask A Question" }, {to: "/questions", text: "View All Questions"},
+				{to: "/add", text: "Add A Character"}, {to: "/add/avatar", text: "Add An Avatar"}]} />
 				<h2>Answer A Question</h2>
-				<div>
-					<label htmlFor="name">Character: </label>
-					<select onChange={e => {
-						setSelectedChar(e.target.value)
-					}}>
-						<option value="0">Select a character...</option>
-						{characters.map(c => {
-							if ((c.global || c.userId === parseInt(localStorage.getItem("app_user_id")) && c.id !== 1))
-								return <option key={c.id} value={c.id}>{c.name}</option>
-						})}
-					</select>
-				</div>
-				<form ref={form}>
-					{selectedChar > 0 && getRandomAvatarsByCharacterId(selectedChar).map(av => {
-						return (
-							<>
-								<img key={av.id} className="avatarImage" src={av.imagePath} />
-								<input type="radio" key={av.imagePath} ref={radio} name="avatarRadio" value={av.id} onChange={e => setSelectedAv(e.target.value)} />
-							</>
-						)
-					})}
-					{selectedChar > 0 && getNonRandomAvatarsByCharacterId(selectedChar).map(av => {
-						return (
-							<>
-								<img key={av.id} className="avatarImage" src={av.imagePath} />
-								<input type="radio" key={av.imagePath} ref={radio} name="avatarRadio" value={av.id} onChange={e => setSelectedAv(e.target.value)} />
-							</>
-						)
-					})}
-				</form>
-				<div>
-					Question:
+				<div className="answerFields">
+					<div className="characterSelectField">
+						<select onChange={e => {
+							setSelectedChar(e.target.value)
+						}}>
+							<option value="0">Select a character...</option>
+							{characters.map(c => {
+								if ((c.global || c.userId === parseInt(localStorage.getItem("app_user_id")) && c.id !== 1))
+									return <option key={c.id} value={c.id}>{c.name}</option>
+							})}
+						</select>
+					</div>
+					<form ref={form}>
+						<div class="characterAvatars">
+							{selectedChar > 0 && getRandomAvatarsByCharacterId(selectedChar).map(av => {
+								return (
+									<>
+										<img key={av.id} className="avatarImage" src={av.imagePath} />
+										<div>
+										<input type="radio" key={av.imagePath} ref={radio} name="avatarRadio" value={av.id} onChange={e => setSelectedAv(e.target.value)} />
+										</div>
+									</>
+								)
+							})}
+							{selectedChar > 0 && getNonRandomAvatarsByCharacterId(selectedChar).map(av => {
+								return (
+									<>
+										<img key={av.id} className="avatarImage" src={av.imagePath} />
+										<div>
+											<input type="radio" key={av.imagePath} ref={radio} name="avatarRadio" value={av.id} onChange={e => setSelectedAv(e.target.value)} />
+										</div>
+									</>
+								)
+							})}
+						</div>
+					</form>
+					<div className="originalQuestion">
+						Original Question:
 					{q && <div>{q.message}</div>}
+					</div>
+					<div>
+						<label htmlFor="answer">Your response:</label>
+						{q && <textarea rows="8" cols="40" ref={response}></textarea>}
+					</div>
+					<button type="submit" className="btn btn-ask-question" onClick={evt => {
+						evt.preventDefault()
+						addNewAnswer();
+					}}>Answer
+        			</button>
 				</div>
-				<div>
-					<label htmlFor="answer">Your response:</label>
-					{q && <textarea ref={response}></textarea>}
-				</div>
-				<button type="submit" className="btn btn-ask-question" onClick={evt => {
-					evt.preventDefault()
-					addNewAnswer();
-				}}>Answer
-        	</button>
 			</>
 		)
 	} else {

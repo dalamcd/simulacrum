@@ -1,0 +1,14 @@
+.footerMain {
+	position: relative;
+	width: 90%;
+	height: 50px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-evenly;
+	border: 2px solid white;
+	border-radius: 10px;
+}
+
+.footerItem {
+	padding-top: 13px;
+}

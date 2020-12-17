@@ -3,6 +3,8 @@ import { Redirect } from "react-router-dom"
 import { AvatarContext } from "../avatars/AvatarProvider";
 import { NavBar } from "../nav/NavBar";
 import { CharacterContext } from "./CharacterProvider";
+import "./Character.css"
+import { Footer } from "../nav/Footer";
 
 export const CharacterForm = props => {
 
@@ -53,27 +55,35 @@ export const CharacterForm = props => {
 	if (localStorage.getItem("app_user_id")) {
 		return (
 			<>
-				<NavBar links={[{ to: "/", text: "Ask A Question" }]} />
+				<NavBar links={[{ to: "/", text: "Ask A Question" }, {to: "/questions", text: "View All Questions"},
+				 {to: "/add/avatar", text: "Add An Avatar"}]} />
 				<h2>Add A Character</h2>
 				<form id="addCharacterForm" ref={form}>
-					<div>
-						<label htmlFor="name">Character name:</label>
-						<input type="text" id="character__name" ref={name} placeholder="Enter character's name" name="name" />
-						<label htmlFor="primaryChar">Primary Character</label>
-						<input type="checkbox" id="primaryChar" value="Primary" ref={primary} />
-						<label htmlFor="globalChar">Global Character</label>
-						<input type="checkbox" id="globalChar" value="Global" ref={global} />
+					<div className="addCharacterFields">
+						<div className="inputNameField">
+
+							<input type="text" id="character__name" ref={name} placeholder="Enter character's name..." name="name" />
+						</div>
+						<div className="primaryChar">
+							<label htmlFor="primaryChar">Primary Character</label>
+							<input type="checkbox" id="primaryChar" value="Primary" ref={primary} />
+						</div>
+						<div className="globalChar">
+							<label htmlFor="globalChar">Global Character</label>
+							<input type="checkbox" id="globalChar" value="Global" ref={global} />
+						</div>
+						<div className="fileUploadField">
+							<label htmlFor="avatar">Profile picture: </label>
+							<input type="file" ref={f} id="avatar" name="avatar" accept="image/png, image/jpeg" />
+						</div>
+						<button type="submit" className="btn btn-ask-question" onClick={evt => {
+							evt.preventDefault()
+							addNewCharacter();
+						}}>Add
+						</button>
 					</div>
-					<div>
-						<label htmlFor="avatar">Choose a profile picture:</label>
-						<input type="file" ref={f} id="avatar" name="avatar" accept="image/png, image/jpeg" />
-					</div>
-					<button type="submit" className="btn btn-ask-question" onClick={evt => {
-						evt.preventDefault()
-						addNewCharacter();
-					}}>Add
-        	</button>
 				</form>
+				<Footer />
 			</>
 		)
 	} else {

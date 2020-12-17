@@ -3,6 +3,8 @@ import { Redirect } from "react-router-dom"
 import { CharacterContext } from "../characters/CharacterProvider";
 import { NavBar } from "../nav/NavBar";
 import { AvatarContext } from "./AvatarProvider"
+import "./Avatar.css"
+import { Footer } from "../nav/Footer";
 
 export const AvatarForm = () => {
 
@@ -40,31 +42,36 @@ export const AvatarForm = () => {
 	if (localStorage.getItem("app_user_id")) {
 		return (
 			<>
-				<NavBar links={[{ to: "/", text: "Ask A Question" }, { to: "/questions", text: "View Questions" },
-				{ to: "/add", text: "Add a Character" }]} />
+				<NavBar links={[{ to: "/", text: "Ask A Question" },
+				{ to: "/questions", text: "View All Questions" }, { to: "/add", text: "Add A Character" }]} />
 				<h2>Add An Avatar</h2>
 				<form id="addAvatarForm" ref={form}>
-					<div>
-						<label htmlFor="name">Character:</label>
-						<select ref={char}>
-							{characters.map(c => {
-								if ((c.global || c.userId === parseInt(localStorage.getItem("app_user_id")) && c.id !== 1))
-									return <option key={c.id} value={c.id}>{c.name}</option>
-							})}
-						</select>
-						<label htmlFor="randomAvatar">Random Avatar</label>
-						<input type="checkbox" id="randomAvatar" value="Primary" ref={random} defaultChecked />
-					</div>
-					<div>
-						<label htmlFor="avatar">Choose a profile picture:</label>
-						<input ref={f} type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
-					</div>
-					<button type="submit" className="btn btn-add-avatar" onClick={evt => {
-						evt.preventDefault()
-						addNewAvatar();
-					}}>Add
+					<div className="addAvatarFields">
+						<div className="selectCharacterField">
+							<label htmlFor="name">Character:</label>
+							<select ref={char}>
+								{characters.map(c => {
+									if ((c.global || c.userId === parseInt(localStorage.getItem("app_user_id")) && c.id !== 1))
+										return <option key={c.id} value={c.id}>{c.name}</option>
+								})}
+							</select>
+						</div>
+						<div className="randomAvatar">
+							<label htmlFor="randomAvatar">Random Avatar</label>
+							<input type="checkbox" id="randomAvatar" value="Primary" ref={random} defaultChecked />
+						</div>
+						<div className="fileUploadField">
+							<label htmlFor="avatar">Profile picture:</label>
+							<input ref={f} type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+						</div>
+						<button type="submit" className="btn btn-add-avatar" onClick={evt => {
+							evt.preventDefault()
+							addNewAvatar();
+						}}>Add
         	</button>
+					</div>
 				</form>
+				<Footer />
 			</>
 		)
 	} else {

@@ -1,37 +1,18 @@
-.nameInputField, .questionInputField, .characterSelectField {
+.selectCharacterField, .randomAvatar, .fileUploadField {
 	text-align: center;
+	padding: 5px 0;
 }
 
-textarea {
-	resize: none;
-}
-
-.askQuestionButton {
-	margin-left: 50%;
-}
-
-.home_initialAnswers {
+.addAvatarFields {
     position: relative;
 	margin: 0 auto;
 	margin-bottom: 10px;
     padding: 10px;
     background-color: #a0bbff;
-    width: 50%;
+    width: 30%;
     text-align: left;
     font: 400 .9em 'Open Sans', sans-serif;
     border: 3px double #353535;
 	border-radius: 10px;
 	text-align: center;
-}
-
-a {
-	color: white
-};
-
-a:hover {
-	color:red
-}
-
-a:visited {
-	color: darkslateblue;
 }
