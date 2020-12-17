@@ -38,12 +38,13 @@ export const Question = props => {
 			})
 
 			return (
-				<div>
-					{localStorage.getItem("app_user_id") ? 
-					<NavBar links={[{ to: "/", text: "Home" }, { to: "/questions", text: "View Questions" },
-					{to: `/answer/${props.match.params.questionId}`, text: "Answer Question"}]} /> :
-					<NavBar links={[{ to: "/", text: "Home" }, { to: "/questions", text: "View Questions" }]} /> 
-			}
+				<div className="main">
+					{localStorage.getItem("app_user_id") ?
+						<NavBar links={[{ to: "/", text: "Home" }, { to: "/questions", text: "View Questions" },
+						{ to: `/answer/${props.match.params.questionId}`, text: "Answer Question" }]} /> :
+						<NavBar links={[{ to: "/", text: "Home" }, { to: "/questions", text: "View Questions" }]} />
+					}
+					<div className="container">
 					<div className="question">
 						<div className="question__name">
 							{question.visitorName} asks a question of {getCharacterById(question.characterId).name}:
@@ -54,21 +55,29 @@ export const Question = props => {
 					</div>
 					<div className="question__responses">
 						{qAnswers.map(qa => qa ?
-						<div key={qa.id} className="question__response">
-							<div className="question__characterContainer">
-								<div className="question__avatar">
-								<img className="question__avatar__image" src={getAvatarById(qa.avatarId).imagePath} />
+							<div key={qa.id} className="question__response">
+								<div className="question__characterContainer">
+									<div className="question__avatar">
+										<img className="question__avatar__image" src={getAvatarById(qa.avatarId).imagePath} />
+									</div>
+									<div className="question__avatar__name">
+										{getCharacterById(qa.characterId).name}
+									</div>
 								</div>
-								<div className="question__avatar__name">
-									{getCharacterById(qa.characterId).name}
+								<div className="question__response__text">
+									{qa.response}
 								</div>
-							</div>
-							<div className="question__response__text">
-								{qa.response}
-								{localStorage.getItem("app_user_id") && <button onClick={() => deleteAnswer(qa.id)}>Delete</button>}
-							</div>
-						</div> : "")
+								<div className="flavorText">
+								<span className="flavorText__item">Node count: {Math.floor(((Math.random() * 90) + 10))}</span>
+								<span className="flavorText__item">Node depth: {((Math.random() * 90) + 10).toFixed(2)}%</span>
+								<span className="flavorText__item">Resonanace frequency: {((Math.random() * 90) + 10).toFixed(2)} dBa</span>
+								</div>
+								<div className="buttonDiv">
+								{localStorage.getItem("app_user_id") && <button className="deleteButton" onClick={() => deleteAnswer(qa.id)}>Delete</button>}
+								</div>
+							</div> : "")
 						}
+					</div>
 					</div>
 				</div>
 			)

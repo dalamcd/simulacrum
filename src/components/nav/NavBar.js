@@ -15,8 +15,13 @@ export const NavBar = ({links}) => {
 	}
 
     return (
+		<>
+		<header>
+		<div className="logo"></div>
         <ul className="navbar">
             {formatLinks()}
         </ul>
+		</header>
+		</>
     )
 }

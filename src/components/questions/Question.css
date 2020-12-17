@@ -4,9 +4,6 @@
 }
 
 .question__avatar {
-	border: 1px solid black;
-	border-right: none;
-	border-bottom: none;
 	padding: 5px;
 }
 
@@ -17,15 +14,18 @@
 }
 
 .question__responses {
-	padding-left: 10px;
+	width: 80%;
+	margin: 0 auto;
+	margin-right: 10%;
 }
 
 .question__response {
-	display: flex
+	display: flex;
+	border: 2px solid black;
+	border-radius: 5px;
 }
 
 .question__response__text {
-	border: 1px solid black;
 	padding: 5px;
 	width: 70%;
 }
@@ -34,10 +34,92 @@
 	padding-left: 20px;
 }
 
+.main {
+	/* background-image: url("../../images/honeycomb.jpg"); */
+	background-color: rgb(168, 168, 168);
+}
+
+.container {
+    padding: 10px;
+}
+
 .question {
-	margin: 10px;
-	margin-bottom: 20px;
-	padding: 5px;
+    position: relative;
+	margin: 0 auto;
+	margin-left: 8%;
+	margin-bottom: 10px;
+    padding: 10px;
+    background-color: #a0bbff;
+    width: 80%;
+    height: 50px;
+    text-align: left;
+    font: 400 .9em 'Open Sans', sans-serif;
+    border: 3px double #353535;
+    border-radius: 10px;
+}
+
+.question__response__text {
+    padding: 15px;
+    margin: 0;
+}
+
+.question__response {
+	position: relative;
+	margin: 0 auto;
+	margin-bottom: 10px;
+    /* margin-left: calc(100% - 240px); */
+    padding: 10px;
+	/* background-color: #353535; */
+	background-color: rgba(0,0,0,.8);
+	color: white;
+    text-align: left;
+    font: 400 .9em 'Open Sans', sans-serif;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.buttonDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.question__avatar__image {
 	border: 1px solid black;
-	border-radius: 5px;
+}
+
+.question__characterContainer {
+	 /* background-color: #d3bf59;  */
+	background-color: rgba(0, 0, 0, .2);
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 5px;
+
+}
+
+.question__avatar__name {
+	text-align: center;
+	/* background-color: rgb(150, 150, 150);
+	border: 4px solid rgb(150, 150, 150); */
+	border-radius: 10px
+}
+
+.message-timestamp-right {
+    position: absolute;
+    font-size: .85em;
+    font-weight: 300;
+    bottom: 5px;
+    right: 5px;
+}
+
+.flavorText {
+	display: flex;
+	justify-content: space-between;
+    position: absolute;
+    font-size: .75em;
+	font-weight: 300;
+	font-style: italic;
+    bottom: 12px;
+	left: 180px;
+	width: 60%;
 }
