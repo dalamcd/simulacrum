@@ -11,7 +11,7 @@ export const Simulacrum = props => {
 
 	const { questions, getQuestions, addQuestion } = useContext(QuestionContext);
 	const { answers, getAnswers } = useContext(AnswerContext);
-	const { characters, getCharacters } = useContext(CharacterContext);
+	const { characters, getCharacters, getCharacterById } = useContext(CharacterContext);
 
 	const [initialQuestions, setInitialQuestions] = useState([])
 
@@ -65,15 +65,29 @@ export const Simulacrum = props => {
 	return (
 		<>
 			{props.location.pathname === "/ask" ? <h2>Thank you for your question. </h2> : ``}
-			<QuestionForm {...props}/>
+			<QuestionForm {...props} />
 			<h2>Recently Answered Questions</h2>
 			<div className="home__recentQuestions">
 				{initialQuestions.map(q => {
-					return <div key={q.id} className="home_initialAnswers"><Link to={`questions/${q.id}`}>{q.message}</Link></div>
+					return (
+						<div className="questionListQuestion" key={q.id}>
+							<div className="questionContainer">
+								<div className="questionTextContainer">
+									<div className="question__name">
+										<Link to={`/questions/${q.id}`}> <span className="question__visitorName">{q.visitorName}</span> asks
+a question of: <span className="question__characterName">{getCharacterById(q.characterId).name}</span></Link>
+									</div>
+									<div className="question__text">
+										{q.message}
+									</div>
+								</div>
+							</div>
+						</div>
+					)
 				})
 				}
 			</div>
-			<Footer admin={true}/>
+			<Footer admin={true} />
 		</>
 	)
 }
