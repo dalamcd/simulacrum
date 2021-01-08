@@ -30,9 +30,10 @@ Make sure you have Node.js and npm installed
 
 # Homepage
 
-* Visitors can ask a question or view previously answered questions
+#### Visitors 
+* Can ask a question or view previously answered questions
 
-* Administrators can:
+#### Administrators can:
 * See all questions, even those that have no received answers
 * Provide answers to any question
 * Add characters with associated avatar. 
