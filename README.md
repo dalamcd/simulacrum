@@ -33,14 +33,14 @@ Make sure you have Node.js and npm installed
 * Visitors can ask a question or view previously answered questions
 
 * Administrators can:
-1. See all questions, even those that have no received answers
-1. Provide answers to any question
-1. Add characters with associated avatar. 
-  -Characters can be marked as `primary`, meaning that they are available to have questions directed to them.
-  -Characters can be marked as `global`, meaning that any administrator can use the character to answer a questions.
-1. Add additional avatars for any characters.
-  -Avatars are marked as `random` by default, indicating if a characters has multiple avatars, one will be used at random.
-  -This can be turned off if an image is to be used e.g. as a specific reation.
+* See all questions, even those that have no received answers
+* Provide answers to any question
+* Add characters with associated avatar. 
+  * Characters can be marked as `primary`, meaning that they are available to have questions directed to them.
+  * Characters can be marked as `global`, meaning that any administrator can use the character to answer a questions.
+* Add additional avatars for any characters.
+  * Avatars are marked as `random` by default, indicating if a characters has multiple avatars, one will be used at random.
+  * This can be turned off if an image is to be used e.g. as a specific reation.
 
 
 # Planning Links
