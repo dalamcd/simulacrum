@@ -25,7 +25,7 @@ export const Register = (props) => {
                 .then((userExists) => {
                     if (!userExists) {
                         // If your json-server URL is different, please change it below!
-                        fetch("http://localhost:8088/users", {
+                        fetch("http://170.187.156.238/users", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"

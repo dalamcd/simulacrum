@@ -7,13 +7,13 @@ export const AvatarProvider = props => {
 	const [avatars, setAvatars] = useState([])
 
 	const getAvatars = () => {
-		return fetch("http://localhost:8088/avatars")
+		return fetch("http://170.187.156.238/avatars")
 		.then(res => res.json())
 		.then(setAvatars)
 	}
 
 	const addAvatar = av => {
-		return fetch("http://localhost:8088/avatars", {
+		return fetch("http://170.187.156.238/avatars", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"

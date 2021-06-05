@@ -69,6 +69,16 @@
       "quoteId": 0,
       "response": "Get EXCITED about the terrible code you wrote!",
       "id": 19
+    },
+    {
+      "userId": 1,
+      "avatarId": 11,
+      "characterId": 11,
+      "questionId": 7,
+      "timestamp": 1609868291613,
+      "quoteId": 0,
+      "response": "It certainly isn't 42!",
+      "id": 20
     }
   ],
   "questions": [
@@ -87,10 +97,10 @@
       "id": 6
     },
     {
-      "visitorName": "A concerned parent",
-      "message": "Why is my child screaming?",
-      "characterId": 6,
-      "time": 1607713221710,
+      "visitorName": "Devin",
+      "message": "What is the meaning of life?",
+      "characterId": 1,
+      "time": 1609868256150,
       "id": 7
     }
   ],
@@ -150,6 +160,13 @@
       "global": false,
       "userId": 2,
       "id": 10
+    },
+    {
+      "name": "Marvin, the paranoid android",
+      "primary": false,
+      "global": true,
+      "userId": 1,
+      "id": 11
     }
   ],
   "avatars": [
@@ -194,6 +211,18 @@
       "random": true,
       "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1607719766/Albert_Einstein_Head_ncp5fb.jpg",
       "id": 10
+    },
+    {
+      "characterId": 11,
+      "random": true,
+      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1609868282/marvin_ezj0xy.png",
+      "id": 11
+    },
+    {
+      "characterId": 4,
+      "random": true,
+      "imagePath": "http://res.cloudinary.com/dalamcd/image/upload/v1609868310/conan_ey8cxr.jpg",
+      "id": 12
     }
   ],
   "users": [

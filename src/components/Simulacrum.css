@@ -4,6 +4,7 @@
 
 textarea {
 	resize: none;
+	font-size: larger;
 }
 
 .askQuestionButton {

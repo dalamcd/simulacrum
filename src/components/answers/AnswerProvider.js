@@ -7,13 +7,13 @@ export const AnswerProvider = props => {
 	const [answers, setAnswers] = useState([])
 
 	const getAnswers = () => {
-		return fetch("http://localhost:8088/answers")
+		return fetch("http://170.187.156.238/answers")
 		.then(res => res.json())
 		.then(setAnswers)
 	}
 
 	const addAnswer = answer => {
-		return fetch("http://localhost:8088/answers",{
+		return fetch("http://170.187.156.238/answers",{
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"

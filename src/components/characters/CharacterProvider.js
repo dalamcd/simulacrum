@@ -7,13 +7,13 @@ export const CharacterProvider = props => {
 	const [characters, setCharacters] = useState([])
 
 	const getCharacters = () => {
-		return fetch("http://localhost:8088/characters")
+		return fetch("http://170.187.156.238/characters")
 		.then(res => res.json())
 		.then(setCharacters)
 	}
 
 	const addCharacter = char => {
-		return fetch("http://localhost:8088/characters", {
+		return fetch("http://170.187.156.238/characters", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"

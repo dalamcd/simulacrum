@@ -6,6 +6,7 @@ import { QuestionContext } from "../questions/QuestionProvider"
 import { AnswerContext } from "./AnswerProvider"
 import "./Answer.css"
 import { NavBar } from "../nav/NavBar"
+import { Footer } from "../nav/Footer"
 
 export const AnswerForm = props => {
 
@@ -64,8 +65,8 @@ export const AnswerForm = props => {
 	if (localStorage.getItem("app_user_id")) {
 		return (
 			<>
-				<NavBar links={[{ to: "/", text: "Ask A Question" }, {to: "/questions", text: "View All Questions"},
-				{to: "/add", text: "Add A Character"}, {to: "/add/avatar", text: "Add An Avatar"}]} />
+				<NavBar links={[{ to: "/", text: "Ask A Question" }, { to: "/questions", text: "View All Questions" },
+				{ to: "/add", text: "Add A Character" }, { to: "/add/avatar", text: "Add An Avatar" }]} />
 				<h2>Answer A Question</h2>
 				<div className="answerFields">
 					<div className="characterSelectField">
@@ -84,9 +85,11 @@ export const AnswerForm = props => {
 							{selectedChar > 0 && getRandomAvatarsByCharacterId(selectedChar).map(av => {
 								return (
 									<>
-										<img key={av.id} className="avatarImage" src={av.imagePath} />
-										<div>
-										<input type="radio" key={av.imagePath} ref={radio} name="avatarRadio" value={av.id} onChange={e => setSelectedAv(e.target.value)} />
+										<div className="avatarContainer">
+											<img key={av.id} className="avatarImage" src={av.imagePath} />
+											<div>
+												<input type="radio" key={av.imagePath} ref={radio} name="avatarRadio" value={av.id} onChange={e => setSelectedAv(e.target.value)} />
+											</div>
 										</div>
 									</>
 								)
@@ -94,9 +97,13 @@ export const AnswerForm = props => {
 							{selectedChar > 0 && getNonRandomAvatarsByCharacterId(selectedChar).map(av => {
 								return (
 									<>
-										<img key={av.id} className="avatarImage" src={av.imagePath} />
-										<div>
-											<input type="radio" key={av.imagePath} ref={radio} name="avatarRadio" value={av.id} onChange={e => setSelectedAv(e.target.value)} />
+										<div className="avatarContainer">
+
+											<img key={av.id} className="avatarImage" src={av.imagePath} />
+											<div>
+												<input type="radio" key={av.imagePath} ref={radio} name="avatarRadio"
+												value={av.id} onChange={e => setSelectedAv(e.target.value)} />
+											</div>
 										</div>
 									</>
 								)
@@ -108,7 +115,9 @@ export const AnswerForm = props => {
 					{q && <div>{q.message}</div>}
 					</div>
 					<div>
-						<label htmlFor="answer">Your response:</label>
+						<div>
+							<label htmlFor="answer">Your response:</label>
+						</div>
 						{q && <textarea rows="8" cols="40" ref={response}></textarea>}
 					</div>
 					<button type="submit" className="btn btn-ask-question" onClick={evt => {
@@ -117,6 +126,7 @@ export const AnswerForm = props => {
 					}}>Answer
         			</button>
 				</div>
+				<Footer />
 			</>
 		)
 	} else {

@@ -7,13 +7,13 @@ export const QuestionProvider = props => {
 	const [questions, setQuestions] = useState([])
 
 	const getQuestions = () => {
-		return fetch("http://localhost:8088/questions")
+		return fetch("http://170.187.156.238/questions")
 		.then(res => res.json())
 		.then(setQuestions)
 	}
 
 	const addQuestion = question => {
-		return fetch("http://localhost:8088/questions", {
+		return fetch("http://170.187.156.238/questions", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
